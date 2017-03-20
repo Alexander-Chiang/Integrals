@@ -3,10 +3,14 @@
 C#求解定积分
 
 ## 随机投点法（蒙特卡洛算法）
-在a到b和函数组成的矩形的范围内，随机投N个点，落到绿色阴影点的个数为M个，对于此图来说便可以容易得知积分的值（绿色阴影）为(M/N)*矩形面积。
-<img src="http://source.jiangyayu.cn/integrals/1.png" alter="蒙特卡洛算法原理" />
-考虑到积分的正负性，随机点落到积分面积内时，分为两种情况：当随机点落在x轴上方时，计数加一，随机点落在x轴下方时，计数减一。
-<img src="http://source.jiangyayu.cn/integrals/2.png" alter="蒙特卡洛算法原理" />
+在a到b和函数组成的矩形的范围内，随机投N个点，落到绿色阴影点的个数为M个，对于此图来说便可以容易得知积分的值（绿色阴影）为(M/N)*矩形面积。  
+
+<img src="http://source.jiangyayu.cn/integrals/1.png" alter="蒙特卡洛算法原理" />  
+
+考虑到积分的正负性，随机点落到积分面积内时，分为两种情况：当随机点落在x轴上方时，计数加一，随机点落在x轴下方时，计数减一。  
+
+<img src="http://source.jiangyayu.cn/integrals/2.png" alter="蒙特卡洛算法原理" />  
+
 ```csharp
 private double methodMTK( double upLimit, double lowLimit)
 {
@@ -27,11 +31,15 @@ private double methodMTK( double upLimit, double lowLimit)
     result = Math.Abs(((double)count / N) * ((yMax-yMin)*(upLimit-lowLimit)));
     return result;
 }
-```
+```  
+
 ## 定义法求积分
 把一块面积分解成N个小矩形，然后求面积和，最后求极限。我们就利用这种方式来实现它，但我们的N毕竟有限，为了结果更准确，把求矩形面积改成求梯形面积（当然矩形也是可以的），如下图：
+
 <img src="http://source.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分" />
+
 把$\left(a,b\right)$分成$N$等分，积分值等于$S\_{1}+S\_{2}+....+S\_{n}$，其中 $S\_{i} = \left(f\left(x\_{i}\right) + f\left(x\_{i+1}\right)\right) * \left(b-a\right)/n / 2$ (矩形面积公式）。
+
 ```csharp
 private double methodDY(double upLimit, double lowLimit)
 {
@@ -45,14 +53,16 @@ private double methodDY(double upLimit, double lowLimit)
     return result;
 }
 ```
+
 ## 变步长梯形求积分法
 用定义求积分法，要确定积分的误差是很难的，我们无法找到一个正好的N值符合我们要求的误差值，所以就需对定义法进行改进，改进的方式就是把原来固定的步长改为变化的步长，利用二分法，如下图：
-{% gp 3-1 %}
+
 <img src="http://source.jiangyayu.cn/integrals/4.png" alter="变步长梯形求定积分" />
 <img src="http://source.jiangyayu.cn/integrals/5.png" alter="变步长梯形求定积分" />
 <img src="http://source.jiangyayu.cn/integrals/6.png" alter="变步长梯形求定积分" />
-{% endgp %}
+
 分到 `| 后一个面积和 - 前一个面积和 |  < 规定误差` 时。这样我们就达到了精确的目的。
+
 ```csharp
 private double methodBBCTX(double upLimit, double lowLimit)
 { 
@@ -75,9 +85,12 @@ private double methodBBCTX(double upLimit, double lowLimit)
     return s0;
 }
 ```
+
 ## C#实现
 应用程序主界面：
+
 <img src="http://source.jiangyayu.cn/integrals/7.png" alter="窗体程序" />
+
 ### 输入
 1. 输入参数
 如下图所示，标识部分为程序的输入部分，包含以下几个必要的输入参数：
@@ -88,6 +101,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 <img src="http://source.jiangyayu.cn/integrals/8.png" alter="窗体程序" />
 2. 函数表达式的动态编译
 由于函数表达式是在程序运行后手动输入的，因此函数表达式不能被当做代码执行。这里提供的解决方案是使用动态编译技术，让函数表达式被动态编译到内存中，供主程序调用，具体实现如下：
+
 ```csharp
  //动态编译代码
  private CompilerResults getCompilerResult(string expression)
@@ -134,6 +148,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
          return Convert.ToDouble(compResult.CompiledAssembly.GetType("demo.calculation").GetMethod("dowork").Invoke(null, new object[] { x, 0 }));
  }
 ```
+
 ### 输出
 设置好输入参数后，点击下面的计算按钮，即可使用选定的方法计算所输入定积分的结果：
 <img src="http://source.jiangyayu.cn/integrals/9.png" alter="窗体程序" />
@@ -147,6 +162,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 <img src="http://source.jiangyayu.cn/integrals/10.png" alter="窗体程序" />
 此处的函数图像的显示使用的是<a href="http://source.jiangyayu.cn/integrals/ZedGraph.dll">ZedGraph</a>控件,其Sourceforge的下载地址为：https://sourceforge.net/projects/zedgraph/
 在点击计算按钮的时候调用绘图函数绘制函数图像，绘图部分的实现如下：
+
 ```csharp
 private void Draw(double upLimit,double lowLimit)
 {
