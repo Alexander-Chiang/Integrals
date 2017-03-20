@@ -1,0 +1,10 @@
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Debug\Integrals.exe.config
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Debug\Integrals.exe
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Debug\Integrals.pdb
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Debug\Integrals.csprojResolveAssemblyReference.cache
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Debug\Integrals.MainForm.resources
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Debug\Integrals.Properties.Resources.resources
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Debug\Integrals.csproj.GenerateResource.Cache
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Debug\Integrals.exe
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Debug\Integrals.pdb
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Debug\ZedGraph.dll

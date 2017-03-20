@@ -1,0 +1,20 @@
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Release\Integrals.exe.config
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Release\Integrals.exe
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Release\Integrals.pdb
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\bin\Release\ZedGraph.dll
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Release\Integrals.csprojResolveAssemblyReference.cache
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Release\Integrals.MainForm.resources
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Release\Integrals.Properties.Resources.resources
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Release\Integrals.csproj.GenerateResource.Cache
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Release\Integrals.exe
+d:\library\documents\visual studio 2013\Projects\Integrals\Integrals\obj\Release\Integrals.pdb
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\bin\Release\Integrals.exe.config
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\obj\Release\Integrals.exe
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\obj\Release\Integrals.pdb
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\bin\Release\Integrals.exe
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\bin\Release\Integrals.pdb
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\bin\Release\ZedGraph.dll
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\obj\Release\Integrals.csprojResolveAssemblyReference.cache
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\obj\Release\Integrals.MainForm.resources
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\obj\Release\Integrals.Properties.Resources.resources
+C:\Users\Yayu.Jiang\Desktop\151302052_江亚玉_定积分求解\project\Integrals\Integrals\obj\Release\Integrals.csproj.GenerateResource.Cache
