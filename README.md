@@ -38,7 +38,7 @@ private double methodMTK( double upLimit, double lowLimit)
 
 <img src="http://source.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分" />
 
-把(a,b)分成$N$等分，积分值等于S1+S2+...+sn，其中 Si=(f(xi)+f(xi+1))∗(b−a)/n/2(矩形面积公式）。
+把(a,b)分成N等分，积分值等于S1+S2+...+sn，其中 Si=(f(xi)+f(xi+1))∗(b−a)/n/2(矩形面积公式）。
 
 ```csharp
 private double methodDY(double upLimit, double lowLimit)
@@ -93,12 +93,18 @@ private double methodBBCTX(double upLimit, double lowLimit)
 
 ### 输入
 1. 输入参数
-如下图所示，标识部分为程序的输入部分，包含以下几个必要的输入参数：
+如下图所示，标识部分为程序的输入部分，包含以下几个必要的输入参数:  
+
 1)被积函数：该部分为被积函数的表达式，变量需用x表示，如`0.5*x`、`0.5*x+0.25*x*x*x`。同时，该部分还支持C#的`Math`库中的函数，如`Math.Sqrt()`、`Math.Abs()`、`Math.Tan()`等。
+
 2)积分上限：定积分的积分上限。
+
 3)积分下限：定积分的积分下限。
+
 4)积分方法：该应用程序用来求解定积分所使用的算法，包括：蒙特卡洛算法(随机投点法)、定积分定义法、变步长梯形求积分法。
+
 <img src="http://source.jiangyayu.cn/integrals/8.png" alter="窗体程序" />
+
 2. 函数表达式的动态编译
 由于函数表达式是在程序运行后手动输入的，因此函数表达式不能被当做代码执行。这里提供的解决方案是使用动态编译技术，让函数表达式被动态编译到内存中，供主程序调用，具体实现如下：
 
@@ -152,14 +158,21 @@ private double methodBBCTX(double upLimit, double lowLimit)
 ### 输出
 设置好输入参数后，点击下面的计算按钮，即可使用选定的方法计算所输入定积分的结果：
 <img src="http://source.jiangyayu.cn/integrals/9.png" alter="窗体程序" />
-**注：**
+**注：**  
+
 1)由于是近似求解，其结果与实际定积分的结果有一定偏差，但一般较小，在非精确计算的情况下可以忽略。
+
 2)一般而言，蒙特卡洛算法的精确度随着投点数的增加而越来越接近真实值，但由于本程序兼顾计算效率问题，将投点数设置为1000000，有需要的可以修改。
+
 3)定义法和变步长梯形求积分法在具有较高计算效率的同时有较好的精确度。
+
 4)针对线性函数的定积分求解，由于算法的特性决定变步长梯形求解法效率最高，且没有误差。
+
 ### 显示
 本应用程序在计算结果的同时，还能显示被积函数的函数图像：
+
 <img src="http://source.jiangyayu.cn/integrals/10.png" alter="窗体程序" />
+
 此处的函数图像的显示使用的是<a href="http://source.jiangyayu.cn/integrals/ZedGraph.dll">ZedGraph</a>控件,其Sourceforge的下载地址为：https://sourceforge.net/projects/zedgraph/
 在点击计算按钮的时候调用绘图函数绘制函数图像，绘图部分的实现如下：
 
