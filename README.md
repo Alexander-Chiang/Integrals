@@ -38,7 +38,7 @@ private double methodMTK( double upLimit, double lowLimit)
 
 <img src="http://source.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分" />
 
-把$\left(a,b\right)$分成$N$等分，积分值等于$S\_{1}+S\_{2}+....+S\_{n}$，其中 $S\_{i} = \left(f\left(x\_{i}\right) + f\left(x\_{i+1}\right)\right) * \left(b-a\right)/n / 2$ (矩形面积公式）。
+把(a,b)分成$N$等分，积分值等于S1+S2+...+sn，其中 Si=(f(xi)+f(xi+1))∗(b−a)/n/2(矩形面积公式）。
 
 ```csharp
 private double methodDY(double upLimit, double lowLimit)
@@ -87,7 +87,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 ```
 
 ## C#实现
-应用程序主界面：
+应用程序主界面:  
 
 <img src="http://source.jiangyayu.cn/integrals/7.png" alter="窗体程序" />
 
