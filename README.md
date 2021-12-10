@@ -173,7 +173,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 
 <img src="https://source.jiangyayu.cn/integrals/10.png" alter="窗体程序" />
 
-此处的函数图像的显示使用的是<a href="https://image.jiangyayu.cn/integrals/ZedGraph.dll">ZedGraph</a>控件,其Sourceforge的下载地址为：https://sourceforge.net/projects/zedgraph/
+此处的函数图像的显示使用的是<a href="https://source.jiangyayu.cn/integrals/ZedGraph.dll">ZedGraph</a>控件,其Sourceforge的下载地址为：https://sourceforge.net/projects/zedgraph/
 在点击计算按钮的时候调用绘图函数绘制函数图像，绘图部分的实现如下：
 
 ```csharp
