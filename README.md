@@ -5,11 +5,11 @@ C#求解定积分
 ## 随机投点法（蒙特卡洛算法）
 在a到b和函数组成的矩形的范围内，随机投N个点，落到绿色阴影点的个数为M个，对于此图来说便可以容易得知积分的值（绿色阴影）为(M/N)*矩形面积。  
 
-<img src="https://image.jiangyayu.cn/integrals/1.png" alter="蒙特卡洛算法原理" />  
+<img src="https://source.jiangyayu.cn/integrals/1.png" alter="蒙特卡洛算法原理" />  
 
 考虑到积分的正负性，随机点落到积分面积内时，分为两种情况：当随机点落在x轴上方时，计数加一，随机点落在x轴下方时，计数减一。  
 
-<img src="https://image.jiangyayu.cn/integrals/2.png" alter="蒙特卡洛算法原理" />  
+<img src="https://source.jiangyayu.cn/integrals/2.png" alter="蒙特卡洛算法原理" />  
 
 ```csharp
 private double methodMTK( double upLimit, double lowLimit)
@@ -36,7 +36,7 @@ private double methodMTK( double upLimit, double lowLimit)
 ## 定义法求积分
 把一块面积分解成N个小矩形，然后求面积和，最后求极限。我们就利用这种方式来实现它，但我们的N毕竟有限，为了结果更准确，把求矩形面积改成求梯形面积（当然矩形也是可以的），如下图：
 
-<img src="https://image.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分" />
+<img src="https://source.jiangyayu.cn/integrals/3.png" alter="定义法求解定积分" />
 
 把(a,b)分成N等分，积分值等于S1+S2+...+sn，其中 Si=(f(xi)+f(xi+1))∗(b−a)/n/2(矩形面积公式）。
 
@@ -57,9 +57,9 @@ private double methodDY(double upLimit, double lowLimit)
 ## 变步长梯形求积分法
 用定义求积分法，要确定积分的误差是很难的，我们无法找到一个正好的N值符合我们要求的误差值，所以就需对定义法进行改进，改进的方式就是把原来固定的步长改为变化的步长，利用二分法，如下图：
 
-<img src="https://image.jiangyayu.cn/integrals/4.png" alter="变步长梯形求定积分" />
-<img src="https://image.jiangyayu.cn/integrals/5.png" alter="变步长梯形求定积分" />
-<img src="https://image.jiangyayu.cn/integrals/6.png" alter="变步长梯形求定积分" />
+<img src="https://source.jiangyayu.cn/integrals/4.png" alter="变步长梯形求定积分" />
+<img src="https://source.jiangyayu.cn/integrals/5.png" alter="变步长梯形求定积分" />
+<img src="https://source.jiangyayu.cn/integrals/6.png" alter="变步长梯形求定积分" />
 
 分到 `| 后一个面积和 - 前一个面积和 |  < 规定误差` 时。这样我们就达到了精确的目的。
 
@@ -89,7 +89,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 ## C#实现
 应用程序主界面:  
 
-<img src="https://image.jiangyayu.cn/integrals/7.png" alter="窗体程序" />
+<img src="https://source.jiangyayu.cn/integrals/7.png" alter="窗体程序" />
 
 ### 输入
 1. 输入参数
@@ -103,7 +103,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 
 4)积分方法：该应用程序用来求解定积分所使用的算法，包括：蒙特卡洛算法(随机投点法)、定积分定义法、变步长梯形求积分法。
 
-<img src="https://image.jiangyayu.cn/integrals/8.png" alter="窗体程序" />
+<img src="https://source.jiangyayu.cn/integrals/8.png" alter="窗体程序" />
 
 2. 函数表达式的动态编译
 由于函数表达式是在程序运行后手动输入的，因此函数表达式不能被当做代码执行。这里提供的解决方案是使用动态编译技术，让函数表达式被动态编译到内存中，供主程序调用，具体实现如下：
@@ -157,7 +157,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 
 ### 输出
 设置好输入参数后，点击下面的计算按钮，即可使用选定的方法计算所输入定积分的结果：
-<img src="https://image.jiangyayu.cn/integrals/9.png" alter="窗体程序" />
+<img src="https://source.jiangyayu.cn/integrals/9.png" alter="窗体程序" />
 **注：**  
 
 1)由于是近似求解，其结果与实际定积分的结果有一定偏差，但一般较小，在非精确计算的情况下可以忽略。
@@ -171,7 +171,7 @@ private double methodBBCTX(double upLimit, double lowLimit)
 ### 显示
 本应用程序在计算结果的同时，还能显示被积函数的函数图像：
 
-<img src="https://image.jiangyayu.cn/integrals/10.png" alter="窗体程序" />
+<img src="https://source.jiangyayu.cn/integrals/10.png" alter="窗体程序" />
 
 此处的函数图像的显示使用的是<a href="https://image.jiangyayu.cn/integrals/ZedGraph.dll">ZedGraph</a>控件,其Sourceforge的下载地址为：https://sourceforge.net/projects/zedgraph/
 在点击计算按钮的时候调用绘图函数绘制函数图像，绘图部分的实现如下：
